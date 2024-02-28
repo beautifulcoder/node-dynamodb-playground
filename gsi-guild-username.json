@@ -1,0 +1,28 @@
+[
+  {
+    "Create":
+    {
+      "IndexName": "gsi-guild-username",
+      "KeySchema":
+      [
+        {
+          "AttributeName": "guild",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "username",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection" :
+      {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput":
+      {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    }
+  }
+]

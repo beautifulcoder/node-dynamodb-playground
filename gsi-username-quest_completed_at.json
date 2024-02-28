@@ -1,0 +1,28 @@
+[
+  {
+    "Create":
+    {
+      "IndexName": "gsi-username-quest_completed_at",
+      "KeySchema":
+      [
+        {
+          "AttributeName": "username",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "quest_completed_at",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection" :
+      {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput":
+      {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    }
+  }
+]
